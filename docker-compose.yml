@@ -1,0 +1,48 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:5.7
+    restart: always
+    container_name: db_mysql_wim
+    environment:
+      MYSQL_DATABASE: 'wim-db'
+      MYSQL_ROOT_USER: 'root'
+      MYSQL_ROOT_PASSWORD: 'wimfrance2023'
+    command:
+      - "--log_bin_trust_function_creators=1"
+    ports:
+      - '3302:3306'
+    expose:
+      - '3302'
+    volumes:
+      - ./data/mysql/db:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pmawim
+    links:
+      - db
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      PMA_ARBITRARY: 1
+    restart: always
+    ports:
+      - 7999:80
+
+  django:
+    container_name: wim_full
+    build:
+      context: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app/
+    ports:
+      - 8000:8000
+    environment:
+      - DEBUG=1
+      - SECRET_KEY=0930j30h302hj320
+      - ALLOWED_HOSTS=localhost,127.0.0.1,webinaire.friare.org
+    depends_on:
+      - db

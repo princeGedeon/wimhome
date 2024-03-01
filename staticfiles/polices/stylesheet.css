@@ -1,0 +1,22 @@
+@font-face{
+    font-family: 'proxima-regular';
+    src: url('proximaregular.otf') format('opentype');
+}
+
+
+@font-face{
+    font-family: 'proxima-bold';
+    src: url('proximabold.otf') format('opentype');
+}
+
+
+@font-face{
+    font-family: 'proxima-xbold';
+    src: url('proximaxbold.otf') format('opentype');
+}
+
+
+@font-face{
+    font-family: 'proxima-thin';
+    src: url('proximathin.otf') format('opentype');
+}

@@ -1,0 +1,249 @@
+
+{% load static%}
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+
+   <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="Work in music, WIM, WORK IN MUSIC">
+<meta name="description" content="">
+
+  <link href="{% static 'output.css' %}" rel="stylesheet">
+    <link href="{% static 'polices/stylesheet.css' %}">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+    <link rel="stylesheet" type="text/css" href="{% static 'fonts/fonts.css' %}" />
+
+
+    <title>
+        {% block title %}
+        Work in Music : Acceuil
+
+        {% endblock title%}
+    </title>
+</head>
+
+
+<body style="font-family: 'Proxima Nova', Georgia, sans-serif;" class="w-screen overflow-x-hidden">
+
+<div>
+      {% include 'components/nav.html' %}
+
+
+
+
+
+    <!--end header -->
+{% block content %}
+
+
+
+    {% endblock content %}
+
+
+
+
+    {% include 'components/footer.html' %}
+
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
+
+
+  </script>
+   <!-- Initialize Swiper -->
+   <script>
+
+       new Swiper('#slider_1', {
+    centeredSlides: true,
+    loop: true,
+    hashNavigation: {
+        watchState: true,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+},
+);
+
+
+//
+new Swiper('#testi_3', {
+     	loop: true,
+      loopedSlides: 4,
+
+			slidesPerView: 'auto',
+
+    centeredSlides: true,
+    loop: true,
+    hashNavigation: {
+        watchState: true,
+    },
+    pagination: {
+        el: ".pagination",
+        clickable: true,
+    },
+    autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+    },
+},
+);
+
+
+
+    document.addEventListener("DOMContentLoaded", function(event) {
+    document.getElementById("mybutton").click();
+ });
+
+
+     // swiperTwo
+     function initswiperTwo() {
+
+      console.log('cl');
+
+        new Swiper("#swiper_Two", {
+
+        spaceBetween: 30,
+
+      loopedSlides: 4,
+      centeredSlides: true,
+			slidesPerView: 'auto',
+
+
+        loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            rewind: true,
+
+        });
+
+          new Swiper("#swiper_T", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 2500,
+                disableOnInteraction: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            rewind: true,
+            breakpoints: {
+                0: {
+                    slidesPerView: 1,
+                },
+
+                320: {
+                    slidesPerView: 1,
+                },
+                 540: {
+                    slidesPerView: 2,
+                },
+                768: {
+                    slidesPerView: 2,
+                },
+                1300: {
+                    slidesPerView: 3,
+                },
+            },
+        });
+
+
+            var swiper = new Swiper(".mySwiper", {
+
+
+      loopedSlides: 4,
+      centeredSlides: true,
+			slidesPerView: 'auto',
+
+        spaceBetween: 30,
+
+        loop: true,
+      autoplay: {
+        delay: 2500,
+
+      },
+
+
+
+    });
+
+    var swiper2 = new Swiper(".mySwiper2", {
+
+
+        spaceBetween: 30,
+         	loop: true,
+      loopedSlides: 4,
+      centeredSlides: true,
+			slidesPerView: 'auto',
+
+
+
+
+      autoplay: {
+        delay: 2500,
+          disableOnInteraction: false,
+
+      },
+
+
+    });
+
+
+    var swiper3 = new Swiper(".mySwiper3", {
+
+        	loop: true,
+      loopedSlides: 4,
+      centeredSlides: true,
+			slidesPerView: 'auto',
+
+        spaceBetween: 30,
+        freeMode: true,
+
+
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination2",
+
+        },
+
+        mousewheel: true,
+        keyboard: true,
+      });
+    };
+
+        console.log('cl');
+
+
+    initswiperTwo();
+
+
+
+  </script>
+</body>
+</html>

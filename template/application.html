@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% block content %}
+
+<div class="flex flex-col justify-evenly min-h-screen">
+
+
+  <section id="section_home" class="max-w-screen   min-h-[150px] md:min-h-[75px] overflow-x-hidden ">
+
+
+  </section>
+
+  <section class="bg-gray-100 dark:bg-gray-900 px-5 ">
+    <div class="grid max-w-screen-xl max-h-[800px]  py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div class="mr-auto place-self-center lg:col-span-7">
+            <h1  style=" font-family: 'proxima_nova_altbold';" class=" text-4xl mb-2 md:text-5xl xl:text-6xl 2xl:text-7xl font-bold font-bold z-10    mb-5 md:mb-14 ">WIM, notre application mobile</h1>
+            <p class="max-w-xl  mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-md dark:text-gray-400">
+
+                WIM c’est l’application qui te permet de réviser tes cours du collège et du lycée d’une manière révolutionnaire !
+Au lieu de passer des heures a réviser tous les jours, désormais, il te suffit d’écouter tes musiques préférées.<br/> Retrouve sur l’application des centaines de musiques comportant toutes les notions des différentes matières.
+C’est simple, si tu connais les musiques par cœur, tu connais aussi tes cours par cœur !
+                .</p>
+            <div style="width: 70%;" class="mt-1 md:mt-5  flex flex-row items-center justify-center gap-5 min-w-[70%]   ">
+
+                <a href="https://play.google.com/store/apps/details?id=com.workinmusic.wim&hl=fr&gl=US" class="w-full px-4 =  py-3 flex gap-1 bg-black text-gray-100 rounded-xl hover:scale-105">
+                  <img src="{% static 'images/play.png' %}" class="w-full object-contain" alt="ico">
+
+                </a>
+
+                <a href="https://tr.ee/7qmGWng0c-" class="w-full px-4 py-3 flex gap-1 bg-black text-gray-100 rounded-xl hover:scale-105">
+                  <img src="{% static 'images/apple.png' %}" class="w-full object-contain" alt="ico">
+
+
+                </a>
+
+               </div>
+        </div>
+        <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">
+
+<div class="relative mx-auto border-gray-800 dark:border-gray-800 bg-gray-800 border-[14px] rounded-[2.5rem] h-[600px] w-[300px] shadow-xl">
+    <div class="w-[148px] h-[18px] bg-gray-800 top-0 rounded-b-[1rem] left-1/2 -translate-x-1/2 absolute"></div>
+    <div class="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[124px] rounded-s-lg"></div>
+    <div class="h-[46px] w-[3px] bg-gray-800 absolute -start-[17px] top-[178px] rounded-s-lg"></div>
+    <div class="h-[64px] w-[3px] bg-gray-800 absolute -end-[17px] top-[142px] rounded-e-lg"></div>
+
+    <div class="rounded-[2rem] overflow-hidden w-[272px] h-[572px] bg-white dark:bg-gray-800">
+        <img src="{% static 'images/app.jpg' %}" class="dark: w-[272px] h-[572px]" alt="">
+        <img src="{% static 'images/home.jpg' %}" class=" dark:block w-[272px] h-[572px]" alt="">
+    </div>
+</div>
+
+        </div>
+    </div>
+</section>
+
+
+<section class=" block py-14 pt-5 pb-5 px-5 min-h-[150px] bg-gray-300 flex flex-col w-full justify-center items-center  ">
+    <div class="min-h-10"></div>
+
+    <h1  style=" font-family: 'proxima_nova_altbold';" class=" text-4xl  my-3 mt-5 mb-2 md:text-5xl xl:text-6xl 2xl:text-7xl font-bold font-bold z-10   text-center mb-5 md:mb-14 ">WorkInMusic, une communauté en plein essor !</h1>
+    <div class="mt-5 mb-10 w-2/3  flex flex-col md:flex-row gap-3 md:gap-5">
+            <div class="hover:bg-[#00D1FF]  rounded-md min-h-[150px] w-full hover:shadow-lg text-gray-100 bg-[#694495] px-5 py-8 flex flex-col items-center">
+                <h2 class="font-bold text-3xl md:text-5xl lg:text-6xl">+10k</h2>
+                <p class="mt-1 font-semibold">Téléchargement</p>
+                <p class="font-light"></p>
+
+            </div>
+
+            <div class="hover:bg-[#00D1FF] rounded-md min-h-[150px] w-full hover:shadow-lg text-gray-100 bg-[#7be3a3] px-5 py-8 flex flex-col items-center">
+                <h2 class="font-bold text-3xl md:text-5xl lg:text-6xl">+30</h2>
+                <p class="mt-1 font-semibold">Artistes</p>
+                <p class="font-light"></p>
+
+            </div>
+
+
+            <div class="hover:bg-[#00D1FF] rounded-md min-h-[150px] w-full hover:shadow-lg text-gray-100 bg-[#ed6262] px-5 py-8 flex flex-col items-center">
+                <h2 class="font-bold text-3xl md:text-5xl lg:text-6xl">98%</h2>
+                <p class="mt-1 font-semibold">de réussites</p>
+                <p class="font-light"></p>
+
+            </div>
+
+            <div class="hover:bg-[#00D1FF] rounded-md min-h-[150px] w-full hover:shadow-lg text-gray-100 bg-[#edb425] px-5 py-8 flex flex-col items-center">
+                <h2 class="font-bold text-3xl md:text-5xl lg:text-6xl">258</h2>
+                <p class="mt-1 font-semibold">cinq étoiles</p>
+                <p class="font-light"></p>
+
+            </div>
+    </div>
+    <div class="min-h-10"></div>
+</section>
+
+    <section class="py-10 block  mt-5  px-5 w-full overflow-x-hidden flex flex-col items-center ">
+    <div class="w-2/3 md:w-full">
+
+        <div class="text-center  max-w-full">
+
+ <h1  style=" font-family: 'proxima_nova_altbold';" class=" text-4xl  my-3 mt-5 mb-2 md:text-5xl xl:text-6xl 2xl:text-7xl font-bold font-bold z-10   text-center mb-5 md:mb-14 ">Découvre WIM</h1>
+
+        </div>
+        <div class="min-h-10">
+
+        </div>
+
+        <div class="mt-6 w-full  min-h-[600px] ">
+
+
+            <div id="swiper_T" class="swiper  ">
+
+                <div class="swiper-wrapper flex gap-5 mb-5">
+
+
+                    <div class="swiper-slide w-ful    min-w-[300px]  max-h-[300px] max-w-[400px]  ">
+                       <div class="p-5  min-h-[300px] min-w-[300px]  bg-gray-200 rounded-xl hover:shadow-2xl shadow-inner" >
+             <img src="{% static 'images/Image 1.png'%}" class="w-full object-cover rounded-xl" alt="">
+
+
+        </div>
+                    </div>
+
+
+
+                    <div class="swiper-slide w-full   min-w-[300px] max-h-[300px] max-w-[400px]  ">
+                       <div class="p-5  min-h-[300px] min-w-[300px]  bg-gray-200 rounded-xl hover:shadow-2xl shadow-inner" >
+            <img src="{% static 'images/Image 2.png' %}" class="w-full object-cover rounded-xl" alt="">
+
+
+        </div>
+                    </div>
+
+
+
+                    <div class="swiper-slide w-full   min-w-[300px] max-h-[300px] max-w-[400px]  ">
+                       <div class="p-5  min-h-[300px] min-w-[300px]  bg-gray-200 rounded-xl hover:shadow-2xl shadow-inner" >
+             <img src="{% static 'images/Image 3.png' %}" class="w-full object-cover rounded-xl" alt="">
+
+
+        </div>
+                    </div>
+
+
+
+                    <div class="swiper-slide w-full  min-w-[300px]  max-h-[300px] max-w-[400px]  ">
+                       <div class="p-5  min-h-[300px] min-w-[300px]  bg-gray-200 rounded-xl hover:shadow-2xl shadow-inner" >
+
+                                <img src="{% static 'images/Image 4.png' %}" class="w-full object-cover rounded-xl" alt="">
+
+
+
+        </div>
+                    </div>
+
+
+
+                    <div class="swiper-slide bg-gray-200  min-w-[300px]  max-h-[300px] max-w-[400px]  ">
+                       <div class="p-5 bg-gray-200  min-h-[300px] min-w-[300px]  bg-gray-200 rounded-xl hover:shadow-2xl shadow-inner" >
+
+                              <img src="{% static 'images/Image 5.png' %}" class="w-full object-cover rounded-xl" alt="">
+
+
+
+        </div>
+                    </div>
+
+
+
+                </div>
+                <div class="min-h-10"></div>
+
+                <div class="swiper-pagination  pt-5 mt-10 md:mt-14"></div>
+
+            </div>
+        </div>
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock content %}

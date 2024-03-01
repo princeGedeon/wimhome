@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% block content %}
+
+div class="flex flex-col justify-evenly min-h-screen">
+
+
+
+
+
+  <section id="section_home" class="max-w-screen py-8  min-h-[150px] overflow-x-hidden ">
+
+
+
+  </section>
+
+
+
+  <section>
+
+    <div class="flex justify-between px-4 mx-auto max-w-screen-xl ">
+      <article class="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+          <header class="mb-4 lg:mb-6 not-format">
+              <address class="flex items-center mb-6 not-italic">
+                  <div class="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
+                      <img class="mr-4 w-16 h-16 rounded-full" src="https://flowbite.com/docs/images/people/profile-picture-2.jpg" alt="Jese Leos">
+                      <div>
+                          <a href="" rel="author" class="text-xl font-bold text-gray-900 dark:text-white">{{post.author}}</a>
+
+                          <p class="text-base text-gray-500 dark:text-gray-400"><time pubdate datetime="2022-02-08" title="February 8th, 2022">{{ post.date | date:"d/m/y" }}</time></p>
+                      </div>
+                  </div>
+              </address>
+              <h1 class="mb-4 text-3xl font-extrabold leading-tight text-gray-900 lg:mb-6 lg:text-4xl dark:text-white">
+                  {{ post.title }}</h1>
+          </header>
+          <p class="lead">{{post.description}}</p>
+          <hr class="mt-2 mb-2"/>
+
+             <div class="px-5 py-8 mt-5 mb-8 min-h-[275px]">
+                    {{ post.content | safe }}
+             </div>
+
+              </article>
+
+          </section>
+      </article>
+  </div>
+</main>
+
+{% if taille == 0 %}
+
+{% else %}
+<aside aria-label="Related articles" class="py-8 lg:py-24 bg-gray-50 dark:bg-gray-800">
+  <div class="px-4 mx-auto max-w-screen-xl">
+      <h2 class="mb-8 text-2xl font-bold text-gray-900 dark:text-white">A propos d'autres articles </h2>
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+         {% for other in others %}
+          <article class="max-w-xs">
+              <a href="{% url 'blog_unique' other.slug %}">
+                  <img src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/article/blog-1.png" class="mb-5 rounded-lg" alt="Image 1">
+              </a>
+              <h2 class="mb-2 text-xl font-bold leading-tight text-gray-900 dark:text-white">
+                  <a href="#">Our first office</a>
+              </h2>
+              <p class="mb-4 text-gray-500 dark:text-gray-400">{{ other.titre}}.</p>
+              <a href="{% url 'blog_unique' other.slug %}" class="inline-flex items-center font-medium underline underline-offset-4 text-primary-600 dark:text-primary-500 hover:no-underline">
+                  Lire plus
+              </a>
+          </article>
+
+          {% endfor %}
+      </div>
+  </div>
+</aside>
+
+{% endif %}
+
+  </section>
+
+
+
+
+
+{% endblock content %}

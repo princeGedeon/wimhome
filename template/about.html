@@ -1,0 +1,273 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load mathfilters %}
+{% block content %}
+
+<div style="font-family: 'Proxima Nova', Georgia, sans-serif;" >
+
+
+
+
+
+  <section id="section_home" class="max-w-screen py-8 relative min-h-[300px] overflow-hidden mb-8 overflow-y-hidden ">
+
+  <div
+          style=" background-image: url({% static 'images/rogner.jpg' %}) "
+        class="w-full min-h-[500px] bg-cover bg-center">
+        <div class="w-full min-h-[500px] flex  justify-center items-center
+             bg-blue-600/30 backdrop-brightness-75">
+            <div class="flex flex-col items-center text-center">
+                  <span class="text-white text-4xl md:text-5xl xl:text-6xl w-full font-bold text-center">Work IN Music</span>
+            <p class="font-semibold text-2xl md:text-3xl text-white">Une équipe dynamique</p>
+            </div>
+        </div>
+    </div>
+
+  </section>
+
+<section class="min-h-[200px] rounded-xl hover:shadow-lg bg-gray-200 mx-auto w-2/3 px-3 py-5">
+  <div class="h-full w-full justify-center  md:w-[75%]  w-[100%] items-center flex flex-col md:flex-row gap-4">
+
+    <div class="py-3 px-2 w-fit h-full min-h-[500px] md:min-w-[100px] justify-evenly  flex flex-col">
+
+      <div class="flex w-full gap-5 justify-start items-center min-h-[100px]">
+        <img src="{% static 'images/app.png' %}" class="w-10 h-10  text-[#4d70fd]" alt="">
+        <div class="flex gap-2 flex-col">
+        <a href="{% url 'application' %}"> <h1 class="text-xl font-semibold text-[#4d70fd] hover:border-b-2 hover:border-[#4d70fd]">Application</h1>
+        </a>
+          <p class="text-gray-600 hidden md:block md:visible">Découvrez nos réalisations, quelques uns de nos travaux</p>
+
+
+        </div>
+
+
+      </div>
+
+
+      <div class="flex w-full gap-5 justify-start items-center min-h-[100px]">
+        <img src="{% static 'images/blog.png' %}" class=" text-[#ed6262]  w-10 h-10" alt="">
+        <div class="flex gap-2 flex-col">
+        <a href="{% url  'blog_list' %}"> <h1 class="text-xl font-semibold text-[#ed6262] hover:border-b-2 hover:border-[#ed6262]">Blog</h1>
+        </a>
+          <p class="text-gray-600 hidden md:block md:visible">Nous partageons nos idées sur notre blog.</p>
+
+
+        </div>
+
+
+      </div>
+
+
+
+      <div class="flex w-full gap-5 justify-start items-center min-h-[100px]">
+        <img src="{% static 'images/carte.png' %}" class="w-10 h-10" alt="">
+        <div class="flex gap-2 flex-col">
+        <a href="{% url 'contact' %}"> <h1 style="" class="text-xl font-extrabold text-[#694495] hover:border-b-2 hover:border-[#694495] ">Contact</h1>
+        </a>
+          <p class="text-gray-600 hidden md:block md:visible">Ecrivez-nous, appelez-nous ou passez nous voir.</p>
+
+
+        </div>
+
+
+      </div>
+
+
+
+
+
+
+
+    </div>
+
+    <div class="py-3 md:w-full px-2">
+      <h1 style="font-family: 'proxima_nova_altbold';" class="text-3xl mb-2 md:mb-3 md:text-4xl xl:text-5xl font-bold text-black">
+        La naissance de WIM, une aventure inédite
+      </h1>
+      <p style="font-family: 'proxima_nova_ltsemibold';" class="text-xl font-semibold mb-4">Work in Music App, est une application mobile qui revolutionne le concept de l'apprentissage</p>
+
+      <p >
+        Tout commence au détour d’un repas avec un couple d’amis ; Adrien et Marie en Juin 2018 à Nice.<br/>
+
+          Après un copieux dîner, une scène m’a interpellé. Marie grondait son fils lui demandant un peu plus de rigueur par rapport à l’apprentissage de ses cours.
+Une idée nous est venue du conseil qu’elle prononça juste après celui-ci :‘’ Si tu passais autant de temps à apprendre tes cours qu’à écouter de la musique, tu aurais de bien meilleures notes. ’’ Dit-elle d’un ton sec. Tout au long de la soirée, la même question me revenait sans cesse :
+      </p>
+      <blockquote class="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800">
+        <p class="text-xl italic font-medium leading-relaxed text-gray-900 dark:text-white">"N’est-il pas possible d’associer apprentissage et musique ?
+         <br/> La réponse à cette question s’est matérialisée avec WIM
+          "</p>
+    </blockquote>
+
+
+    </div>
+
+  </div>
+    </section>
+
+
+  <section class="bg-white 2xl:py-10 mt-8 lg:py-10 py-5 mx-auto">
+  <div class="  mx-auto">
+
+      <div class="text-center mt-5 max-w-2xl mx-auto">
+          <h1 style=" font-family: 'proxima_nova_altbold';" class=" text-4xl mb-2 md:text-5xl xl:text-6xl 2xl:text-7xl font-bold font-bold z-10   text-center mb-5 md:mb-14 " >Notre Team</h1>
+               </div>
+
+      <div class="mt-5 py-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 items-center lg:grid-cols-3 xl:grid-cols-4 px-10 gap-6">
+
+              {% for team in teams %}
+              <div id="default-modal-{{team.pk}}" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2xl max-h-full">
+        <!-- Modal content -->
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+                    {{ team.nom }}
+                </h3>
+                <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal-{{ team.pk }}">
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class="p-4 md:p-5 space-y-4">
+                <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                    {{ team.description}}
+                         </p>
+
+            </div>
+            <!-- Modal footer -->
+            <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
+
+                <button data-modal-hide="default-modal-{{ team.pk }}" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Decline</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+              <div>
+                  <div class="bg-white shadow rounded p-10">
+                      <div class="flex flex-wrap  sm:flex-nowrap justify-between">
+                          <div class="flex flex-wrap items-center gap-5">
+                             <a href="{{ team.link}}">
+                                  <img src="{{ team.img.url }}" alt="" class="rounded-full h-28">
+                             </a>
+                              <div>
+                                  <h3 class="text-xl font-bold">{{ team.nom }}</h3>
+                                  <span class="text-gray-700 block my-1">{{ team.title}}</span>
+                                  <p class="text-gray-500">{{ team.description | truncatechars:150 }} .
+
+<button data-modal-target="default-modal-{{ team.pk}}" data-modal-toggle="default-modal-{{ team.pk}}" class=" text-blue-800 focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-1 text-center" type="button">
+  Lire plus
+</button>
+                                  </p>
+                              </div>
+                          </div>
+
+                          <div class="flex sm:flex-col items-center flex-row gap-4 mt-3">
+                              <a href="{{ team.link }}" class="bg-blue-500 shadow-md rounded-full flex items-center justify-center h-8 w-8">
+                                  <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="75" height="75" viewBox="0 0 48 48">
+<path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path><path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+</svg>
+                              </a>
+
+                          </div>
+                      </div>
+
+                  </div>
+              </div>
+
+             {% endfor %}
+
+          </div>
+      </div>
+
+  </div>
+</section>
+<div class="w-full md:min-h-[100px]">
+    <img src="{% static 'images/wav.png' %}" class="w-full min-h-10 object-cover"/>
+</div>
+
+
+
+
+
+
+  <section class="min-h-[300px] flex flex-col items-center w-full py-5 mt-5 md:py-3">
+    <h1  style=" font-family: 'proxima_nova_altbold';" class=" text-4xl mb-2 md:text-5xl xl:text-6xl 2xl:text-7xl font-bold font-bold z-10   text-center mb-5 md:mb-14 " >Nos artistes ambassadeur</h1>
+
+
+    <p class=" w-1/2 mb-5 mx-5 text-center">
+        Nous travaillons en collaboration avec une équipe artistique constituée de beatmakers, de compositeurs, d’auteurs et interprètes. Le top reste de pouvoir créer des musiques avec des artistes vedettes, des références pour les jeunes.
+
+    </p>
+
+    <!-- Slider main container -->
+<div class=" max-w-screen overflow-hidden   min-h-[200px]  mt-4 md:mt-10 py-2 md:py-3">
+  <!-- Additional required wrapper -->
+  <div class="swiper w-2/3 mySwiper2 min-h-[275px] py-5 mt-2 ">
+    <div class="swiper-wrapper">
+
+        {% for comp in compositeurs %}
+      <div style="" class="swiper-slide max-w-[150px]  min-h-[150px] md:min-h-[100px] md:md:min-w-[100px]"></div>
+
+
+      <div class="w-fit flex  mx-5 flex-col items-center justify-center rounded-full  md:w-1/2 min-h-full md:min-h-full h-fit   ">
+        <img
+    src="{{ comp.img.url }}"
+    class=" shadow-lg shadow-black object-cover  hover:ring hover:shadow-2xl md:shadow-lg xl:shadow-xl max-w-xs w-[200px] h-[200px] rounded-full transition duration-300 ease-in-out hover:scale-110"
+    alt="Louvre" />
+    <h1 style="font-family: 'proxima_nova_altbold';" class="mt-2 mb-1 font-bold text-black">{{ comp.nom }}</h1>
+    <p class="mb-1">{{ comp.title }}</p>
+
+    </div>
+
+
+{% endfor %}
+
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+</div>
+
+
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+{% endblock content %}
