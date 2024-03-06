@@ -170,6 +170,8 @@ CSRF_TRUSTED_ORIGINS = [
     "https://3957-41-85-178-11.ngrok-free.app"
     ,"http://workinmusic.fr"
 , "http://www.workinmusic.fr",
+    "https://workinmusic.fr",
+    "https://www.workinmusic.fr"
 
 
 ]

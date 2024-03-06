@@ -95,7 +95,7 @@
 
 </div>
 
-<section id="section_home" class="max-w-screen  min-h-[500px]  bg-gradient-to-b from-[#00D1FF] to-white h-fit  pt-10  overflow-x-hidden ">
+<section id="section_home" class="max-w-screen  min-h-[500px]   h-fit  pt-10  overflow-x-hidden ">
      <nav class="bg-[#00D1FF]  w-full  top-0 border-black  py-1 px-8">
       <div class="max-w-screen-xl opacity-0 flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{% url 'home' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -309,11 +309,11 @@
 
 <div class="owl-carousel owl-theme owl-loaded">
     <div class="owl-stage-outer">
-        <div class="owl-stage py-2">
+        <div class="owl-stage flex justify-center items-end py-2">
              {% for mag in magazines %}
             <div style="" class="owl-item w-full  px-14 ">
 
-      <div class="flex flex-col  text-center gap-0 items-center swiper-slide w-full  justify-center  ">
+      <div style="height: 150px;width: 150px;" class="flex flex-col  text-center gap-0 items-center swiper-slide w-full  ">
         <img src="{{ mag.img.url }}" class="  mb-1 px-8  py-4 mx-auto flex items-center justify-center object-cover" alt="">
 
         <a href="{{ mag.link}}" class="px-2 py-2 mt-3 text-sm w-full text-center mt-2 mb-3 border rounded-full bg-green-600 text-gray-200">Accéder à l'article</a>
