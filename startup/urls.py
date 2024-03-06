@@ -11,7 +11,9 @@ urlpatterns = [
     path('media/', views.media, name="media"),
     path('contact-us/', views.contact, name="contact"),
     path('newsletter_save', views.newsletter_signup, name="new"),
-    path('contacts_send', views.contact_send, name="sent")
+    path('contacts_send', views.contact_send, name="sent"),
+    path('mentions-legales/',views.mention,name="mention"),
+    path('politique-de-confidentialités', views.politique, name="politique")
 
 
 ]

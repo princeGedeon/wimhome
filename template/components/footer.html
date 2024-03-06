@@ -1,14 +1,15 @@
 {% load static %}
-<div class="w-full min-h-[100px] pt-2 -z-10" >
+
+<footer  class="  shadow pt-3 ">
+    <div class="w-full min-h-[100px] pt-2 -z-10" >
     <img class=" w-full object-cover" src="{% static 'images/foot.png' %}"/>
 
 </div>
-<footer style="
+  <div style="
 font-family: 'Proxima Nova';
 
 
-background-color: #36a9e0" class="  shadow pt-3 ">
-  <div class="w-full max-w-screen px-14 p-4 md:py-4">
+background-color: #36a9e0" class="w-full max-w-screen px-14 p-4 md:py-4">
       <div class="flex flex-col items-center md:items-start  md:flex-row sm:items-start justify-start">
          <div class=" px-10 flex flex-col items-center md:items-start gap-3 w-full" >
           <h1 class="text-xl text-center  md:text-left font-bold text-white"> TELECHARGE NOTRE APPLICATION</h1>
@@ -93,9 +94,9 @@ style="fill:#FFFFFF;">
       </div>
       <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
     <p class="text-white text-center ">
-    <a href="" class="hover:font-bold hover:underline">  Mentions Légales </a>
+    <a href="{% url 'mention' %}" class="hover:font-bold hover:underline">  Mentions Légales </a>
       |
-      <a href="" class="hover:font-bold hover:underline">  Politique de confidentialité - Work In music </a>
+      <a href="{% url 'politique' %}" class="hover:font-bold hover:underline">  Politique de confidentialité - Work In music </a>
 
     </p>
     </div>

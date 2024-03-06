@@ -120,3 +120,11 @@ def newsletter_signup(request):
     }
 
     return render(request, 'index.html', context)
+
+
+def mention(request):
+    return render(request, 'mention.html')
+
+def politique(request):
+    return render(request, 'politique.html')
+

@@ -92,9 +92,10 @@
             </div>
         </div>
     </div>
+
 </div>
 
-<section id="section_home" class="max-w-screen  min-h-[600px] h-fit  pt-10  overflow-x-hidden ">
+<section id="section_home" class="max-w-screen  min-h-[500px]  bg-gradient-to-b from-[#00D1FF] to-white h-fit  pt-10  overflow-x-hidden ">
      <nav class="bg-[#00D1FF]  w-full  top-0 border-black  py-1 px-8">
       <div class="max-w-screen-xl opacity-0 flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{% url 'home' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
@@ -153,11 +154,12 @@
       </div>
     </nav>
 
+<div class="bg-[#00D1FF]">
+ <img src="{% static 'images/home.png'%}" class="w-full h-full object-contain  object-bottom bg-center min-h-[300px]" />
+</div>
 
- <img src="{% static 'images/home.png'%}" class="w-full object-cover  object-bottom bg-center min-h-[300px]" />
-
-    <div class="-translate-y-[50px] mx-auto text-center -bottom-50 flex items-center justify-center">
-        <h1 style="font-family: 'proxima_nova_ltsemibold';" class="text-3xl   md:text-3xl text-center mx-auto xl:text-[30px]  font-semibold  px-10 hover:font-extrabold">Découvre WIM ton application de soutien scolaire qui transforme tes cours en chansons !!</h1>
+    <div class="-translate-y-[50px] h-full  mx-auto text-center -bottom-50 flex items-center justify-center">
+        <h1 style="font-family: 'proxima_nova_ltsemibold';" class="text-xl sm:text-2xl    md:text-3xl text-center mx-auto xl:text-[30px]  font-semibold  px-10 hover:font-extrabold">Découvre WIM ton application de soutien scolaire qui transforme tes cours en chansons !!</h1>
     </div>
 
 
@@ -263,7 +265,7 @@
             <div style="" class="owl-item w-full  px-14 ">
 
       <div class="flex flex-col  text-center gap-0 items-center swiper-slide w-full  justify-center  ">
-        <img src="{{ part.img.url }}" class="  mb-1 px-8  py-4 mx-auto flex items-center justify-center object-cover" alt="">
+        <img style="min-height: 20px;min-width: 20px;" src="{{ part.img.url }}" class="  mb-1 px-8  py-4 mx-auto flex items-center justify-center object-cover" alt="">
 
 
       </div>
