@@ -1,8 +1,8 @@
 {% load static %}
- <nav class="bg-white  z-20 border-b-2 w-full fixed top-0 border-black  py-1 px-1">
-      <div class="max-w-screen min-w-screen  flex flex-wrap items-center justify-between  p-4">
+ <nav class="bg-white z-10 bg-red-300  border-b-2 max-w-screen w-full m-0 fixed top-0 border-black  ">
+      <div class="   flex flex-wrap items-center justify-between  p-4">
         <a href="{% url 'home' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{% static 'images/logowim.png' %}" class="w-[80px]  md:w-[100px] ] " alt="Work in Music" />
+            <img src="{% static 'images/logowim.png' %}" class="w-[75px]  md:w-[100px] ] " alt="Work in Music" />
 
         </a>
 
@@ -20,12 +20,14 @@
               <a href="{% url 'about' %}" class="block py-2 px-3 font-extrabold  text-gray-800  rounded md:bg-transparent hover:text-[#00D1FF] md:p-0 md:w-auto md:text-gray-800 md:p-0 md:dark:text-gray-800 md:dark:bg-transparent" aria-current="page">QUI SOMMES NOUS ?</a>
             </li>
 
+
+
             <li>
               <button id="dropdownNavbarLink2" data-dropdown-toggle="dropdownNavbar2" class="flex font-bold hover:font-extrabold items-center justify-between w-full py-2 px-3 text-gray-800 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 hover:text-[#00D1FF] md:p-0 md:w-auto dark:text-gray-800  dark:focus:text-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 md:dark:hover:bg-transparent">QUE FAISONS  NOUS ? <svg class="w-2.5 h-2.5 ms-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                   <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 4 4 4-4"/>
                 </svg></button>
               <!-- Dropdown menu -->
-              <div id="dropdownNavbar2" class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+              <div id="dropdownNavbar2" style="z-index: 30;position: absolute;" class=" hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
                   <ul class="py-2 text-sm text-gray-700 dark:text-gray-400" aria-labelledby="dropdownLargeButton">
                     <li>
                       <a href="{% url 'application' %}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 uppercase dark:hover:text-[#7CFFCE]">Application </a>

@@ -11,55 +11,72 @@
 
 
 
-  <section id="section_home" class="max-w-screen py-8 min-h-[150px] overflow-x-hidden ">
+<section id="section_home" class="max-w-screen py-8 relative min-h-[300px] overflow-hidden mb-8 overflow-y-hidden ">
+
+  <div
+          style=" background-image: url({% static 'images/solf.jpg' %}) "
+        class="w-full min-h-[275px] bg-cover bg-center">
+        <div class="w-full min-h-[500px] flex  justify-center items-center
+             bg-blue-600/30 backdrop-brightness-75">
+           <div class="flex flex-col items-center text-center">
+                  <span class="text-white text-4xl md:text-5xl xl:text-6xl w-full font-bold text-center">Contactez-Nous</span>
+            <p class="font-semibold text-2xl md:text-3xl text-white">Prendre contact avec notre équipe</p>
+            </div>
+        </div>
+    </div>
 
   </section>
+
 
   <section class="bg-white dark:bg-gray-900 mx-auto px-5">
     <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
 
-    <h1  style=" font-family: 'proxima_nova_altbold';" class=" text-4xl  my-3 mt-5 mb-2 md:text-5xl xl:text-6xl 2xl:text-7xl font-bold font-bold z-10   text-center mb-5 md:mb-14 ">Contactez-Nous</h1>
 
-           <form action="#" class="space-y-8">
 
+           <form action="{% url 'sent' %}" method="post"  enctype="multipart/form-data" class="space-y-8">
+                {% csrf_token %}
+                  {% if message %}
+
+	<div class="alert alert-info" id="newsletter-message" role="alert">
+
+        <div class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400" role="alert">
+  <span class="font-medium">Succès !</span> {{ message }}
+</div>
+</div>
+
+
+{% endif %}
             <div>
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nom</label>
-                <input type="text" id="nlae" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="DOE" required>
+                <input name="nom" type="text" id="nlae" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="DOE" required>
             </div>
 
             <div>
                 <label for="prenom" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Prénoms</label>
-                <input type="text" id="prenom" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="John " required>
+                <input name="prenom" type="text" id="prenom" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="John " required>
             </div>
 
             <div>
                 <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">E-mail</label>
-                <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="johndoe@gmail.com" required>
+                <input name="" type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="johndoe@gmail.com" required>
             </div>
             <div>
                 <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Objet</label>
-                <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="De quoi voulez vous discutez" required>
+                <input name="sujet" type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="De quoi voulez vous discutez" required>
             </div>
             <div class="sm:col-span-2">
                 <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">Message</label>
-                <textarea id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laissez votre message..."></textarea>
+                <textarea name="message" id="message" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg shadow-sm border border-gray-300 focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Laissez votre message..."></textarea>
             </div>
 
 
 
 <div class="flex flex-col items-start justify-center mb-2 w-full">
     <span>Pièces Jointes <span class="text-red-700">* optionnel</span></span>
-    <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-bray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
-        <div class="flex flex-col items-center justify-center pt-5 pb-6">
-            <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"/>
-            </svg>
-            <p class="mb-2  font-bold text-xl text-gray-500 dark:text-gray-400"><span class="font-semibold">Glisser</span> et déposer les fichiers ici</p>
-            <span class="text-center my-1">ou</span>
-            <p class="text-xs text-blue-500 dark:text-gray-400">Parcourir les fichiers</p>
-        </div>
-        <input id="dropzone-file" type="file" class="hidden" />
-    </label>
+
+<label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Uploader un fichier comme pièce jointe</label>
+<input name="file" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" id="file_input" type="file">
+
 
 </div>
 

@@ -170,3 +170,11 @@ CSRF_TRUSTED_ORIGINS = [
     "https://3957-41-85-178-11.ngrok-free.app"
 
 ]
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = "guedjegedeon03@gmail.com"
+#'contacts@workinmusic.fr'
+EMAIL_HOST_PASSWORD ="wzhd hggw qicc ixcn"
+EMAIL_USE_TLS = True  # Utilisez TLS pour sécuriser la connexion

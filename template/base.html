@@ -4,12 +4,21 @@
 <html lang="fr">
 
 <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RXM44LW0TM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RXM44LW0TM');
+</script>
 
 
    <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="keywords" content="Work in music, WIM, WORK IN MUSIC">
-<meta name="description" content="">
+<meta name="keywords" content="Work in music, WIM, WORK IN MUSIC, Intelligence Artificielle, AI, IA et Musique">
+<meta name="description" content="Découvre WIM ton application de soutien scolaire qui transforme tes cours en chansons !! · WIM : L'apprentissage en musique ! · Révise efficacement, sans perte de temps">
 
   <link href="{% static 'output.css' %}" rel="stylesheet">
     <link href="{% static 'polices/stylesheet.css' %}">
@@ -18,6 +27,8 @@
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
 />
+    <link rel="stylesheet" href="{% static 'dist/assets/owl.carousel.css' %}">
+<link rel="stylesheet" href="{% static 'dist/assets/owl.theme.default.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'fonts/fonts.css' %}" />
 
 
@@ -27,10 +38,63 @@
 
         {% endblock title%}
     </title>
+      <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
 </head>
 
 
-<body style="font-family: 'Proxima Nova', Georgia, sans-serif;" class="w-screen overflow-x-hidden">
+<body style="font-family: 'Proxima Nova', Georgia, sans-serif;" class="max-w-screen w-full  overflow-x-hidden">
+<!-- Main modal -->
+<div id="default-modal-full" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+    <div class="relative p-4 w-full max-w-2/3 min-h-2/3  max-h-full">
+        <!-- Modal content -->
+        <div class="relative  rounded-lg shadow dark:bg-transparent">
+            <!-- Modal header -->
+            <div class="flex items-center justify-between pt-2 pr-2  rounded-t dark:border-gray-600">
+
+                <button type="button" class="text-gray-200 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="default-modal-full">
+                    <svg class="w-8 h-8" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                    <span class="sr-only">Close modal</span>
+                </button>
+            </div>
+            <!-- Modal body -->
+            <div class=" min-h-screen h-2/3 min-w-[300px] flex flex-col sm:flex-row items-center justify-center p-4 md:p-5 space-y-4">
+                <div style="width: 25%;" class=" h-full w-2/3 sm:w-1/4 flex flex-col gap-5  justify-end items-end">
+                    <div class="h-1/3"></div>
+                    <div class="h-1/3">
+                        <img class="h-[200px] w-full object-contain" src="{% static 'images/qrplay.png'%}"/>
+                    </div>
+                    <div class="h-1/3">
+                       <a href="https://play.google.com/store/apps/details?id=com.workinmusic.wim&hl=fr&gl=US">
+                            <img class="h-[100px] w-full object-contain" src="{% static 'images/play.png' %}"/>
+                       </a>
+                    </div>
+
+                </div>
+
+                       <img class="  object-cover max-w-[400px] md:max-w-[500px]" src="{% static 'images/pop.png' %}"/>
+
+
+                     <div style="width: 25%;" class=" h-full w-2/3 sm:w-1/4 flex flex-col gap-5  justify-start items-start">
+                    <div class="h-1/3"></div>
+                    <div class="h-1/3">
+                        <img class="h-[200px] w-full object-contain" src="{% static 'images/qrapp.png'%}"/>
+                    </div>
+                    <div class="h-1/3">
+                        <a href="https://apps.apple.com/fr/app/wim-cours-tle-en-musique/id1660808942">
+                        <img class="h-[100px] w-full object-contain" src="{% static 'images/apple.png'%}"/>
+                            </a>
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Modal footer -->
+
+        </div>
+    </div>
+</div>
 
 <div>
       {% include 'components/nav.html' %}
@@ -53,7 +117,9 @@
 
 
 </div>
-
+<script src="{% static 'dist/jquery.min.js'%}"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="{% static 'dist/owl.carousel.min.js' %}"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js">
 
@@ -61,53 +127,42 @@
   </script>
    <!-- Initialize Swiper -->
    <script>
+       {% block js%}
 
-       new Swiper('#slider_1', {
-    centeredSlides: true,
-    loop: true,
-    hashNavigation: {
-        watchState: true,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-},
-);
+       {% endblock %}
+$('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:20,
 
+    autoplay:true,
+    autoplayTimeout:3000,
 
-//
-new Swiper('#testi_3', {
-     	loop: true,
-      loopedSlides: 4,
+    responsive:{
+        0:{
+            items:1,
 
-			slidesPerView: 'auto',
+        },
+        600:{
+            items:3,
 
-    centeredSlides: true,
-    loop: true,
-    hashNavigation: {
-        watchState: true,
-    },
-    pagination: {
-        el: ".pagination",
-        clickable: true,
-    },
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-},
-);
+        },
+        1000:{
+            items:4,
+
+        }
+    }
+})
+$('.play').on('click',function(){
+    owl.trigger('play.owl.autoplay',[3000])
+})
+$('.stop').on('click',function(){
+    owl.trigger('stop.owl.autoplay')
+})
 
 
 
-    document.addEventListener("DOMContentLoaded", function(event) {
-    document.getElementById("mybutton").click();
- });
+
+
 
 
      // swiperTwo
@@ -119,10 +174,22 @@ new Swiper('#testi_3', {
 
         spaceBetween: 30,
 
-      loopedSlides: 4,
-      centeredSlides: true,
-			slidesPerView: 'auto',
 
+			slidesPerView: 1,
+breakpoints: {
+        640: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 3,
+          spaceBetween: 20,
+        },
+        1024: {
+          slidesPerView: 4,
+          spaceBetween: 20,
+        },
+      },
 
         loop: true,
             autoplay: {
@@ -241,7 +308,6 @@ new Swiper('#testi_3', {
 
 
     initswiperTwo();
-
 
 
   </script>

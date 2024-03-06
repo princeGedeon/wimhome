@@ -3,7 +3,7 @@
 {% load mathfilters %}
 {% block content %}
 
-<div style="font-family: 'Proxima Nova', Georgia, sans-serif;" >
+<div class="max-w-screen overflow-x-hidden" style="font-family: 'Proxima Nova', Georgia, sans-serif;" >
 
 
 
@@ -113,13 +113,23 @@ Une idée nous est venue du conseil qu’elle prononça juste après celui-ci :�
                </div>
 
       <div class="mt-5 py-5">
+
+
+
+
+
+
+
+
+
           <div class="grid grid-cols-1 md:grid-cols-2 items-center lg:grid-cols-3 xl:grid-cols-4 px-10 gap-6">
+
 
               {% for team in teams %}
               <div id="default-modal-{{team.pk}}" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
     <div class="relative p-4 w-full max-w-2xl max-h-full">
         <!-- Modal content -->
-        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+        <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 hover:ring hover:ring-blue-600">
             <!-- Modal header -->
             <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
@@ -142,7 +152,7 @@ Une idée nous est venue du conseil qu’elle prononça juste après celui-ci :�
             <!-- Modal footer -->
             <div class="flex items-center p-4 md:p-5 border-t border-gray-200 rounded-b dark:border-gray-600">
 
-                <button data-modal-hide="default-modal-{{ team.pk }}" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Decline</button>
+                <button data-modal-hide="default-modal-{{ team.pk }}" type="button" class="py-2.5 px-5 ms-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700">Quitter</button>
             </div>
         </div>
     </div>
@@ -206,34 +216,52 @@ Une idée nous est venue du conseil qu’elle prononça juste après celui-ci :�
 
     </p>
 
-    <!-- Slider main container -->
-<div class=" max-w-screen overflow-hidden   min-h-[200px]  mt-4 md:mt-10 py-2 md:py-3">
+
+
+        <div class=" w-full min-h-[200px] px-10 mt-8 md:mt-10 py-2 md:py-2">
   <!-- Additional required wrapper -->
-  <div class="swiper w-2/3 mySwiper2 min-h-[275px] py-5 mt-2 ">
-    <div class="swiper-wrapper">
-
-        {% for comp in compositeurs %}
-      <div style="" class="swiper-slide max-w-[150px]  min-h-[150px] md:min-h-[100px] md:md:min-w-[100px]"></div>
 
 
-      <div class="w-fit flex  mx-5 flex-col items-center justify-center rounded-full  md:w-1/2 min-h-full md:min-h-full h-fit   ">
-        <img
-    src="{{ comp.img.url }}"
-    class=" shadow-lg shadow-black object-cover  hover:ring hover:shadow-2xl md:shadow-lg xl:shadow-xl max-w-xs w-[200px] h-[200px] rounded-full transition duration-300 ease-in-out hover:scale-110"
-    alt="Louvre" />
-    <h1 style="font-family: 'proxima_nova_altbold';" class="mt-2 mb-1 font-bold text-black">{{ comp.nom }}</h1>
-    <p class="mb-1">{{ comp.title }}</p>
 
-    </div>
 
+
+
+<div class="owl-carousel owl-theme owl-loaded">
+    <div class="owl-stage-outer">
+        <div class="owl-stage py-2">
+                    {% for comp in compositeurs %}
+            <div style="" class="owl-item w-full  px-14 ">
+
+      <div class="flex flex-col   text-center gap-0 items-center  w-full  justify-center  ">
+
+                  <img style="height: 150px;width: 150px" src="{{ comp.img.url }}" class="mx-auto mb-1 rounded-full   object-cover" alt="">
+
+          <h1 class="font-bold text-2xl">{{ comp.nom}}</h1>
+          <h2 class="text-gray-600">{{comp.title}}</h2>
+       </div>
+
+
+            </div>
 
 {% endfor %}
-
+        </div>
     </div>
-    <div class="swiper-pagination"></div>
-  </div>
+
 
 </div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
 
 
   </section>
