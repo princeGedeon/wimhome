@@ -168,6 +168,9 @@ CORS_ALLOW_ALL_ORIGINS=True
 CSRF_TRUSTED_ORIGINS = [
     "http://yourwhitelistedip.com",
     "https://3957-41-85-178-11.ngrok-free.app"
+    ,"http://workinmusic.fr"
+, "http://www.workinmusic.fr",
+
 
 ]
 
