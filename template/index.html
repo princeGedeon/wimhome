@@ -95,8 +95,8 @@
 
 </div>
 
-<section id="section_home" class="max-w-screen  min-h-[500px]   h-fit  pt-10  overflow-x-hidden ">
-     <nav class="bg-[#00D1FF]  w-full  top-0 border-black  py-1 px-8">
+<section id="section_home" class="max-w-screen  md:min-h-[500px]   h-fit  pt-10  overflow-x-hidden ">
+     <nav class="bg-[#00D1FF] hidden md:block  w-full  top-0 border-black  py-1 px-8">
       <div class="max-w-screen-xl opacity-0 flex flex-wrap items-center justify-between mx-auto p-4">
         <a href="{% url 'home' %}" class="flex items-center space-x-3 rtl:space-x-reverse">
             <img src="" class="w-[60px] opacity-0  h-[60px] md:w-[90px] md:h-[80px] "/>
@@ -154,8 +154,8 @@
       </div>
     </nav>
 
-<div class="bg-[#00D1FF]">
- <img src="{% static 'images/home.png'%}" class="w-full h-full object-contain  object-bottom bg-center min-h-[300px]" />
+<div class="bg-[#00D1FF] ">
+ <img src="{% static 'images/home.png'%}"  class="ring   w-full h-full object-contain  object-bottom bg-center min-h-[300px]" />
 </div>
 
     <div class="-translate-y-[50px] h-full  mx-auto text-center -bottom-50 flex items-center justify-center">
