@@ -15,5 +15,5 @@ def sendMail(emails, template, subject="Inscription à notre Newsletter",context
     email_content = render_to_string(template, context)
     plain_message = strip_tags(email_content)
     # Create an EmailMessage object and send it
-    send_mail(subject, plain_message,recipient_list=emails,from_email="guedjegedeon03@gmail.com", html_message=email_content)
+    send_mail(subject, plain_message,recipient_list=emails,from_email="contact@workinmusic.fr", html_message=email_content)
 

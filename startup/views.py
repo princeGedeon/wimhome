@@ -100,9 +100,12 @@ def newsletter_signup(request):
     if request.method == 'POST':
         email = request.POST.get('nf_email')
         if email:
-            Newsletter.objects.create(email=email)
-            sendMail([email],'mails/newsletter_sign.html')
-            message = "Mail enregistré avec succès."
+            if Newsletter.objects.filter(email=email).count() >= 1:
+                message="Vous avez déja souscrit à notre Newsletter"
+            else:
+                Newsletter.objects.create(email=email)
+                sendMail([email],'mails/newsletter_sign.html')
+                message = "Mail enregistré avec succès."
 
 
     reviews = Review.objects.filter(active=True)
