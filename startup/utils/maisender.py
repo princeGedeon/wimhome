@@ -7,7 +7,6 @@ def sendMail(emails, template, subject="Inscription à notre Newsletter",context
     """
     Envoyez des emails a un ou plusieurs utilisateurs (hosts)
     """
-
     # Render the HTML content using the context
 
 
