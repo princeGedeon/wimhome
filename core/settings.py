@@ -181,5 +181,5 @@ EMAIL_HOST = 'ssl0.ovh.net'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = "contact@workinmusic.fr"
 #'contacts@workinmusic.fr'
-EMAIL_HOST_PASSWORD ="LaMagieDeVoirPlusGrand"
+EMAIL_HOST_PASSWORD ="Pazf54T9wE8yH8g"
 EMAIL_USE_TLS = True  # Utilisez TLS pour sécuriser la connexion
